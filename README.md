@@ -191,23 +191,6 @@ Run everything from the project root, in this exact order. A few steps offer **t
 
 ---
 
-## Limitations
-
-- **Lab-condition images only.** PlantVillage photographs are individual leaves against plain backgrounds. Real-world field photos — cluttered backgrounds, multiple leaves, inconsistent lighting, different camera angles — were not part of training, and predictions on such images should be treated as a starting point, not a diagnosis.
-- **Duplicate check was sampled, not exhaustive.** 0 duplicates were found in a ~9% sample of the dataset; a full-dataset hash check would be needed for a fully rigorous leakage guarantee.
-- **CPU-trained.** Both models were trained on CPU due to hardware constraints, which directly motivated skipping Phase 5's exhaustive tuning.
-
----
-
-## Tech Stack
-
-- **PyTorch** / **torchvision** — model, training, data pipeline
-- **scikit-learn** — evaluation metrics
-- **Streamlit** / **Plotly** — deployment app
-- **Matplotlib** / **seaborn** — static plots (EDA, confusion matrix, training curves)
-
----
-
 ## Acknowledgments
 
 - Dataset: [PlantVillage](https://github.com/spMohanty/PlantVillage-Dataset) (color subset)
