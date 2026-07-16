@@ -1,0 +1,30 @@
+# Plant Disease Classification CNN — Project Dependencies
+# Install with: pip install -r requirements.txt
+
+# ── Core deep learning ────────────────────────────────
+torch>=2.1.0
+torchvision>=0.16.0
+
+# ── Data handling ──────────────────────────────────────
+numpy>=1.24.0
+pillow>=10.0.0
+
+# ── Visualization (EDA, training curves, confusion matrix) ──
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# ── Evaluation metrics (Phase 6 — classification_report, F1) ──
+scikit-learn>=1.3.0
+
+# ── Notebooks ──────────────────────────────────────────
+jupyter>=1.0.0
+ipykernel>=6.25.0
+
+# ── Progress bars (optional but useful for long training/hashing loops) ──
+tqdm>=4.66.0
+
+# ── Deployment (Phase 9 — Streamlit app) ───────────────
+streamlit>=1.28.0
+
+# ── Hyperparameter tuning (Phase 5) ────────────────────
+optuna>=3.4.0
