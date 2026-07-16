@@ -6,12 +6,19 @@ Built from scratch in PyTorch, with a documented, reasoned progression through E
 
 ---
 
+## 🚀 Live Demo
+
+**[Try it on Streamlit Cloud → ](#)** *(link to be added after deployment)*
+
+---
+
 ## Table of Contents
 
 - [Overview](#overview)
 - [Dataset](#dataset)
 - [Project Structure](#project-structure)
 - [Setup](#setup)
+- [How to Run This](#how-to-run-this)
 - [Pipeline & Results](#pipeline--results)
   - [Phase 1 — EDA](#phase-1--eda)
   - [Phase 2 — Data Processing](#phase-2--data-processing)
@@ -152,11 +159,15 @@ Run everything from the project root, in this exact order. A few steps offer **t
 - 5-block CNN with BatchNorm + GlobalAveragePooling, same data/training procedure as baseline for a fair architecture-only comparison
 - **97.63% test accuracy**, train/val gap closed to +0.0004 — the real win here is generalization, not just the +1.2pt accuracy gain
 
+![Baseline vs Improved training curves](outputs/plots/baseline_vs_improved_curves.png)
+
 ### Phase 5 — Tuning (skipped)
 - Deliberately skipped: model already near-ceiling (97.6%) and CPU training cost (~1,180s/epoch) made exhaustive search low-value — documented as a decision, not an omission
 
 ### Phase 6 — Evaluation
 - Full test-set evaluation: **97.63% accuracy, 97.20% macro F1** — the close match between accuracy and macro-F1 confirms small classes aren't being quietly ignored despite the 36:1 imbalance
+
+![Confusion matrix](outputs/plots/confusion_matrix.png)
 
 ### Phase 7 — Explainability (Grad-CAM)
 - Grad-CAM applied to correct and incorrect predictions, checking the model attends to actual leaf symptoms rather than PlantVillage's plain backgrounds
