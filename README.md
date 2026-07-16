@@ -8,7 +8,7 @@ Built from scratch in PyTorch, with a documented, reasoned progression through E
 
 ## 🚀 Live Demo
 
-**[Try it on Streamlit Cloud → ](#)** *(link to be added after deployment)*
+**[Try it on Streamlit Cloud → ](https://plant-disease-classification-cnn-dl.streamlit.app/)**
 
 ---
 
