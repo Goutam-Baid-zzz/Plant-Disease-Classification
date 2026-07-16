@@ -27,7 +27,7 @@ from PIL import Image
 
 from config import (
     MODELS_DIR, PLOTS_DIR, GRADCAM_DIR, MISCLASSIFIED_DIR,
-    METADATA_DIR, RAW_DATA_DIR, CLASS_MAPPING_JSON,
+    METADATA_DIR, RAW_DATA_DIR, SAMPLES_DIR, CLASS_MAPPING_JSON,
 )
 from predict import load_model, predict_image
 from gradcam import GradCAM, denormalize_image, overlay_heatmap
@@ -583,11 +583,11 @@ def page_specimen_index(class_dist, class_mapping):
 
     with tab2:
         section("Browse by Species", "🌾")
-        if RAW_DATA_DIR.exists():
+        if SAMPLES_DIR.exists():
             class_names = sorted(class_mapping.keys()) if class_mapping else sorted(r["class_name"] for r in class_dist)
             selected_class = st.selectbox("Select a catalogued condition", class_names)
 
-            class_dir = RAW_DATA_DIR / selected_class
+            class_dir = SAMPLES_DIR / selected_class
             if class_dir.exists():
                 images = sorted(class_dir.glob("*.[jJ][pP][gG]"))[:6] + sorted(class_dir.glob("*.[pP][nN][gG]"))[:6]
                 images = images[:6]
@@ -613,7 +613,7 @@ def page_specimen_index(class_dist, class_mapping):
             else:
                 field_note("Folder Not Found", f"Expected images at <code>{class_dir}</code>.", "warn")
         else:
-            field_note("Raw Data Not Found", f"Expected the dataset at <code>{RAW_DATA_DIR}</code>.", "warn")
+            field_note("Samples Not Found", f"Expected sample thumbnails at <code>{SAMPLES_DIR}</code>. Run <code>build_specimen_samples.py</code> first.", "warn")
 
     with tab3:
         section("Class Imbalance", "⚖️")
