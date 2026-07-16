@@ -8,6 +8,7 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 RAW_DATA_DIR = PROJECT_ROOT / "data" / "raw" / "plantvillage dataset"
 PROCESSED_DATA_DIR = PROJECT_ROOT / "data" / "processed"
 METADATA_DIR = PROJECT_ROOT / "data" / "metadata"
+SAMPLES_DIR = PROJECT_ROOT / "assets" / "specimen_samples"
 
 TRAIN_LABELS_CSV = METADATA_DIR / "train_labels.csv"
 CLASS_MAPPING_JSON = METADATA_DIR / "class_mapping.json"
